@@ -11,7 +11,7 @@ Quando('submeto o meu cadastro com:') do |table|
 
     click_on "Cadastrar"
 end
-  
+
 Então('devo ser redirecionado para a área logada') do
     expect(page).to have_css '.dashboard'
 end
