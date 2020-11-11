@@ -16,20 +16,32 @@ Cenário: Cadastro
 
 Cenário: Email não informado
     Dado que acesso a página de cadastro
-    Quando submeto o meu cadastro sem o email
-    Então devo ver Oops! Informe seu email
+    Quando submeto o meu cadastro com:
+        | email          |                 |
+        | senha          | secret123       |
+        | confirma_senha | secret123       |
+    Então devo ver a mensagem: "Oops! Informe seu email."
 
 Cenário: Senha não informada
     Dado que acesso a página de cadastro
-    Quando submeto o meu cadastro sem a senha
-    Então devo ver Oops! Informe sua senha
+    Quando submeto o meu cadastro com:
+        | email          | annia@gmail.com |
+        | senha          |                 |
+        | confirma_senha |                 |
+    Então devo ver a mensagem: "Oops! Informe sua senha."
 
 Cenário: Senha divergente
     Dado que acesso a página de cadastro
-    Quando submeto meu cadastro com senha divergente
-    Então devo ver Oops! Senhas não são iguais
+    Quando submeto o meu cadastro com:
+        | email          | annia@gmail.com |
+        | senha          | secret123       |
+        | confirma_senha | abc1234         |
+    Então devo ver a mensagem: "Oops! Senhas não são iguais."
 
 Cenário: Nenhum campo preenchido
     Dado que acesso a página de cadastro
-    Quando submeto meu cadastro sem preencher os campos
-    Então devo ver Opps! Informe seu email e sua senha
+    Quando submeto o meu cadastro com:
+        | email          |                 |
+        | senha          |                 |
+        | confirma_senha |                 |
+    Então devo ver a mensagem: "Oops! Informe seu email e sua senha."
