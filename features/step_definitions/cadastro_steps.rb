@@ -5,9 +5,12 @@ end
   
 Quando('submeto o meu cadastro com:') do |table|
     user = table.rows_hash
+
+    delorean(user[:email])
+
     find("input[name*=email]").set user[:email]
     find("input[placeholder='Sua senha secreta']").set user[:senha]
-    find("input[placeholder='Confirme sua senha']").set user[:senha_confirma]
+    find("input[placeholder='Confirme a senha']").set user[:confirma_senha]
 
     click_on "Cadastrar"
 end
