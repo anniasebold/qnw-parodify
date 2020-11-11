@@ -9,9 +9,9 @@ Quando('submeto o meu cadastro com:') do |table|
     find("input[placeholder='Sua senha secreta']").set user[:senha]
     find("input[placeholder='Confirme sua senha']").set user[:senha_confirma]
 
-    sleep 5 #temporário
+    click_on "Cadastrar"
 end
   
 Então('devo ser redirecionado para a área logada') do
-    
+    expect(page).to have_css '.dashboard'
 end
