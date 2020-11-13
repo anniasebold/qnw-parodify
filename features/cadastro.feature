@@ -29,3 +29,8 @@ Funcionalidade: Cadastro de usuários
             | annia@gmail.com |           |                | Oops! Informe sua senha.             |
             | annia@gmail.com | secret123 | abc1234        | Oops! Senhas não são iguais.         |
             |                 |           |                | Oops! Informe seu email e sua senha. |
+
+    Cenário: Validação do campo email
+
+        Quando acesso a página de cadastro
+        Então deve exibir o seguinte css: "input[type=email]"
