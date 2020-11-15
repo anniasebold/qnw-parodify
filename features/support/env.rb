@@ -2,8 +2,10 @@ require 'allure-cucumber'
 require 'capybara'
 require 'capybara/cucumber'
 
+require_relative 'actions'
 require_relative 'helpers'
 
+World(Actions)
 World(Helpers)
 
 Capybara.configure do |config|
