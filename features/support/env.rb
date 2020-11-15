@@ -1,7 +1,8 @@
-require "capybara"
-require "capybara/cucumber"
+require 'allure-cucumber'
+require 'capybara'
+require 'capybara/cucumber'
 
-require_relative "helpers"
+require_relative 'helpers'
 
 World(Helpers)
 
