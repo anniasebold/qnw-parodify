@@ -18,7 +18,6 @@ Quando('toco a seguinte canção:') do |table|
 
   song = find('.song-item', text: @parody[:parodia])
   song.find('.fa-play-circle').click
-  sleep 10
 end
 
 Então('essa paródia deve ficar em modo de reprodução') do
