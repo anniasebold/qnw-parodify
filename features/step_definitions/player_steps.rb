@@ -13,9 +13,15 @@ Dado('que eu gosto muito de {string}') do |categoria|
 end
 
 Quando('toco a seguinte canção:') do |table|
-  parodi = table.rows_hash
+  @parody = table.rows_hash
+  find('a', text: @parody[:banda]).click
+
+  song = find('.song-item', text: @parody[:parodia])
+  song.find('.fa-play-circle').click
+  sleep 10
 end
 
 Então('essa paródia deve ficar em modo de reprodução') do
-
+  song_play = find('.playing')
+  expect(song_play).to have_text @parody[:parodia]
 end
